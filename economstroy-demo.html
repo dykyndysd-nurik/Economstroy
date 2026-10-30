@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Реставрация и перетяжка мебели в Бишкеке — Экономстрой (демо-макет)</title>
+<meta name="description" content="Реставрация мебели в Бишкеке, ремонт мебели, перетяжка диванов и кресел. На дому или в мастерской.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3ebe0; --card:#fffdf9; --ink:#3a2a1f; --muted:#7a6656;
+  --brown:#6b4a32; --brown-d:#4f3524; --line:#e3d6c5; --accent:#25d366;
+  --r:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.demo-bar{background:var(--brown-d);color:#f3ebe0;font-size:12px;text-align:center;padding:6px 12px;letter-spacing:.02em}
+header{position:sticky;top:0;z-index:20;background:rgba(243,235,224,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.logo{font-weight:700;font-size:17px;line-height:1.1;letter-spacing:.01em}
+.logo small{display:block;font-weight:400;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.menu{display:none;gap:24px;font-size:14px;color:var(--muted)}
+.menu a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 20px;font-weight:600;font-size:14px;border:1.5px solid var(--brown);color:var(--brown);background:transparent;cursor:pointer;font-family:inherit;transition:.2s}
+.btn:hover{background:var(--brown);color:#fff}
+.btn.fill{background:var(--brown);color:#fff}
+.btn.fill:hover{background:var(--brown-d)}
+.btn.wa{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.wa:hover{filter:brightness(.93);background:var(--accent)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+@media(min-width:860px){.menu{display:flex}}
+
+.hero{display:grid;gap:28px;padding:36px 0 28px;align-items:center}
+.hero h1{font-size:clamp(34px,8vw,60px);font-weight:300;line-height:1.08;letter-spacing:-.02em}
+.hero h1 b{font-weight:700;color:var(--brown)}
+.hero p{color:var(--muted);margin:14px 0 22px;max-width:46ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.blob{position:relative;aspect-ratio:1/1;max-width:420px;width:100%;margin:0 auto}
+.blob::before,.blob::after{content:"";position:absolute;border:2px solid var(--brown);border-radius:50%;opacity:.35}
+.blob::before{inset:-4% 6% 6% -4%}
+.blob::after{inset:4% -4% -4% 6%;opacity:.2}
+.blob .pic{position:absolute;inset:0;border-radius:46% 54% 50% 50% / 52% 46% 54% 48%;overflow:hidden;background:#d9c7b0}
+.blob img{width:100%;height:100%;object-fit:cover}
+@media(min-width:860px){.hero{grid-template-columns:1.1fr .9fr;padding:64px 0 40px}}
+
+.rings{height:46px;margin:10px 0 0;background:
+ radial-gradient(circle at 50% 50%,var(--brown) 0 4px,transparent 5px 8px,var(--brown) 9px 10px,transparent 11px 14px,var(--brown) 15px 16px,transparent 17px) 0 0/54px 46px repeat-x;opacity:.55}
+
+section{padding:44px 0 8px}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+h2{font-size:clamp(26px,5vw,38px);font-weight:600;letter-spacing:-.01em;line-height:1.15;margin-bottom:8px}
+.lead{color:var(--muted);max-width:62ch;margin-bottom:22px}
+
+.grid{display:grid;gap:14px}
+.services{grid-template-columns:1fr}
+@media(min-width:640px){.services{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.services{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.card h3{font-size:18px;font-weight:600;margin-bottom:10px;line-height:1.25}
+.card ul{list-style:none;color:var(--muted);font-size:14px}
+.card li{padding:5px 0 5px 18px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;border-radius:50%;border:1.5px solid var(--brown)}
+.card .more{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--brown)}
+
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:2px 0 14px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:none;background:transparent;font-family:inherit;font-size:15px;color:var(--muted);padding:8px 14px;cursor:pointer;border-bottom:2px solid transparent}
+.tab.on{color:var(--ink);font-weight:600;border-color:var(--brown)}
+.prices{grid-template-columns:1fr}
+@media(min-width:640px){.prices{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.prices{grid-template-columns:repeat(3,1fr)}}
+.price{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.price span{font-size:15px;line-height:1.35}
+.price b{flex:0 0 auto;border:1.5px solid var(--brown);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--brown-d);white-space:nowrap}
+.note{margin-top:16px;font-size:14px;color:var(--muted);background:#ecdfcd;border-radius:18px;padding:16px 18px}
+.note ul{margin:8px 0 0 18px}
+
+.gal{grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:760px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal figure{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:1/1;background:#dccbb5;cursor:zoom-in}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:8px;bottom:8px;background:rgba(255,253,249,.9);border-radius:999px;font-size:11px;padding:3px 10px;color:var(--brown-d)}
+.center{text-align:center;margin-top:16px}
+.lb{position:fixed;inset:0;background:rgba(30,20,12,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.lb.on{display:flex}
+.lb img{max-height:88vh;border-radius:16px}
+
+.steps{counter-reset:s;grid-template-columns:1fr}
+@media(min-width:760px){.steps{grid-template-columns:1fr 1fr 1fr}}
+.step{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.step::before{content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brown);color:#fff;font-weight:600;margin-bottom:10px}
+.step p{font-size:15px}
+
+.about{display:grid;gap:18px}
+@media(min-width:860px){.about{grid-template-columns:1.2fr .8fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--muted)}
+.about p{margin-bottom:12px;color:#5b4837}
+.stat{background:var(--brown);color:#f6ede1;border-radius:var(--r);padding:26px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.stat b{font-size:56px;font-weight:300;line-height:1}
+.stat span{font-size:14px;opacity:.85}
+
+.contact{display:grid;gap:14px}
+@media(min-width:860px){.contact{grid-template-columns:1fr 1fr}}
+.contact .card p{margin:6px 0;font-size:15px}
+.contact .card a.l{color:var(--brown);font-weight:600}
+form label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+form input,form select{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit;background:#fff;color:var(--ink)}
+form input:focus,form select:focus{outline:none;border-color:var(--brown)}
+form .btn{margin-top:14px;width:100%;justify-content:center}
+
+footer{margin-top:44px;background:var(--brown);color:#f3e6d6;border-radius:var(--r) var(--r) 0 0;padding:28px 0 90px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer small{opacity:.8;display:block;margin-top:4px}
+
+.fab{position:fixed;right:16px;bottom:16px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.fab svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Демонстрационный макет редизайна. Это не официальный сайт компании.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Экономстрой<small>Реставрация мебели</small></a>
+    <nav class="menu">
+      <a href="#uslugi">Услуги</a>
+      <a href="#ceny">Цены</a>
+      <a href="#galereya">Галерея</a>
+      <a href="#kak">Как заказать</a>
+      <a href="#o-kompanii">О компании</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <a class="btn wa" href="https://wa.me/996223878888?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D1%80%D0%B5%D1%81%D1%82%D0%B0%D0%B2%D1%80%D0%B0%D1%86%D0%B8%D1%8E%20%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D1%82%D1%8F%D0%B6%D0%BA%D1%83%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.95 9.95 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.5.05-1.15.25-3.7-.8-3.1-1.3-5.1-4.5-5.25-4.7-.15-.2-1.25-1.65-1.25-3.15s.8-2.25 1.05-2.55c.3-.3.6-.35.8-.35h.55c.18 0 .42-.07.65.5.25.6.85 2.1.92 2.25.08.15.12.33.02.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.1 1.32 2.4 1.47.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.08.12.08.72-.17 1.4Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+  <div class="hero">
+    <div>
+      <h1>Реставрация и перетяжка <b>мебели</b> в Бишкеке</h1>
+      <p>Ремонт, реставрация и перетяжка диванов, кресел и стульев. Работаем на дому у клиента или в своей мастерской. Окончательная цена после осмотра мастером.</p>
+      <div class="cta">
+        <a class="btn wa" href="https://wa.me/996223878888?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D1%80%D0%B5%D1%81%D1%82%D0%B0%D0%B2%D1%80%D0%B0%D1%86%D0%B8%D1%8E%20%D0%B8%20%D0%BF%D0%B5%D1%80%D0%B5%D1%82%D1%8F%D0%B6%D0%BA%D1%83%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8." target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn" href="#ceny">Смотреть цены</a>
+      </div>
+    </div>
+    <div class="blob"><div class="pic"><img id="heroImg" src="https://mebel.economstroy.kg/gallery/obivka_1.jpg" alt="Перетяжка дивана" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="rings"></div>
+
+  <section id="uslugi">
+    <div class="kicker">Что мы делаем</div>
+    <h2>Обивка и перетяжка мягкой мебели</h2>
+    <p class="lead">Ремонт, реставрация, перетяжка мебели в Бишкеке. Работаем с вашими материалами или предлагаем ткани, кожу и кожзаменитель из каталога. Используем только сертифицированные материалы.</p>
+    <div class="grid services">
+      <div class="card">
+        <h3>Обивка и перетяжка диванов</h3>
+        <ul>
+          <li>Диваны, кресла, стулья</li>
+          <li>Перетяжка подлокотников и подушек</li>
+          <li>Замена мебельных механизмов</li>
+          <li>Ремонт лакокрасочного покрытия мебели</li>
+          <li>Обивка натуральной кожей или заменителем кожи</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ремонт мягкой мебели</h3>
+        <ul>
+          <li>Ремонт угловых диванов и диванов-книжек</li>
+          <li>Замена обивки мебельных гарнитуров</li>
+          <li>Ремонт мягких уголков и кухонных уголков</li>
+          <li>Перетяжка текстилем на дому или в мастерской</li>
+          <li>Переделка мебели любой конфигурации</li>
+          <li>Изменение дизайна мягкой мебели</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Реставрация мебели</h3>
+        <ul>
+          <li>Буфет, комод, стенка, шкаф</li>
+          <li>Стол и стулья</li>
+          <li>Кухонный гарнитур</li>
+          <li>Стенды</li>
+          <li>Старинная и антикварная мебель</li>
+          <li>Ремонт деревянных частей и шпона</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Пошив чехлов и текстиля</h3>
+        <ul>
+          <li>Чехлы на диваны, кресла, стулья</li>
+          <li>Пошив штор, скатертей, покрывал, наматрасников</li>
+          <li>Ремонт одежды</li>
+          <li>Ремонт одежды из меха и кожи</li>
+          <li>Каталог тканей</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Производство мягкой мебели под заказ</h3>
+        <ul>
+          <li>Классические и современные коллекции</li>
+          <li>Обивочные ткани и кожа от производителя</li>
+          <li>Подбор материалов под ваш заказ</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Галерея работ</h3>
+        <ul>
+          <li>Обивка и перетяжка</li>
+          <li>Замена обивки</li>
+          <li>Чехлы</li>
+          <li>Реставрация</li>
+        </ul>
+        <a class="more" href="#galereya">Смотреть работы →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ceny">
+    <div class="kicker">Прайс</div>
+    <h2>Цены на перетяжку мягкой мебели</h2>
+    <p class="lead">Цены указаны в сомах. Итоговая стоимость зависит от модели и материала.</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid prices" id="prices"></div>
+    <div class="note">
+      На цену реставрации влияют:
+      <ul>
+        <li>сложность изделия (количество резных частей, возраст);</li>
+        <li>состояние изделия (повреждения шпона, рассохшиеся элементы, нынешнее покрытие);</li>
+        <li>вариант отделки и эффектов (патина, краколет, декапе, глянец и т.д.).</li>
+      </ul>
+      <p style="margin-top:8px">Окончательная цена складывается только после осмотра мебели специалистом.</p>
+    </div>
+  </section>
+
+  <section id="galereya">
+    <div class="kicker">Наши работы</div>
+    <h2>Галерея работ</h2>
+    <p class="lead">Нажмите на фото, чтобы увеличить.</p>
+    <div class="grid gal" id="gal"></div>
+    <div class="center"><button class="btn" id="moreBtn" type="button">Показать ещё</button></div>
+  </section>
+
+  <section id="kak">
+    <div class="kicker">Как заказать</div>
+    <h2>Как перетянуть мебель на дому</h2>
+    <p class="lead">Заказать перетяжку, обивку и ремонт можно на дому или привезти мебель в мастерскую. Производственный цех оборудован всем необходимым.</p>
+    <div class="grid steps">
+      <div class="step"><p>Позвоните или напишите нам и расскажите, какую мягкую мебель хотите перетянуть.</p></div>
+      <div class="step"><p>Обсудите с консультантом материалы для обивки и необходимость дополнительного ремонта, уточните стоимость.</p></div>
+      <div class="step"><p>Согласуйте дату и удобное время визита мастера-консультанта.</p></div>
+      <div class="step"><p>Мастер приезжает, вы выбираете обивочные материалы и согласуете виды работ.</p></div>
+      <div class="step"><p>Если нужна перетяжка на дому, уточните у мастера возможность, цену и сроки.</p></div>
+      <div class="step"><p>Подпишите акт выполненных работ, гарантийный талон и произведите расчёт.</p></div>
+    </div>
+  </section>
+
+  <section id="o-kompanii">
+    <div class="kicker">О компании</div>
+    <h2>Компания «Экономстрой» с 2004 года</h2>
+    <div class="about">
+      <div>
+        <p>Основное направление компании — производство металлопластиковых изделий. Реставрация мебели — одно из направлений её деятельности.</p>
+        <p>Для качественной реставрации существует множество технологий и материалов, но главным остаётся умение и опыт мастера. Наши мастера имеют большой опыт в реставрации столов, комодов, стульев, диванов, старой и антикварной мебели.</p>
+        <p>Современную мебель мы реставрируем по итальянской технологии с двухкомпонентными полиуретановыми лаками: покрытие красиво выглядит, прочное и долговечное. Для старинной мебели применяем старинные технологии: шеллак, вощение, политура.</p>
+        <p>Реставрация — это не только внешний вид, но и продление срока службы изделия: выявление скрытых дефектов, укрепление каркаса, защита от рассыхания.</p>
+        <div class="kicker" style="margin-top:18px">Когда нужна реставрация</div>
+        <div class="chips">
+          <span class="chip">Освежить помещение</span>
+          <span class="chip">Подчеркнуть интерьер</span>
+          <span class="chip">Мебель не сочетается после переезда</span>
+          <span class="chip">Ценность и память об изделии</span>
+          <span class="chip">Нет аналогов в продаже</span>
+          <span class="chip">Придать товарный вид перед продажей</span>
+          <span class="chip">Трещины, пятна, царапины, вмятины</span>
+          <span class="chip">Подержанная мебель</span>
+        </div>
+      </div>
+      <div class="stat"><b>2004</b><span>год основания компании «Экономстрой»</span></div>
+    </div>
+  </section>
+
+  <section id="kontakty">
+    <div class="kicker">Контакты</div>
+    <h2>Свяжитесь с нами</h2>
+    <div class="contact">
+      <div class="card">
+        <h3>ОсОО «Экономстрой»</h3>
+        <p>с. Лебединовка, пр. Ленина, д. 23/2</p>
+        <p>Телефон: <a class="l" href="tel:+996223878888">+996 (223) 878-888</a></p>
+        <p>WhatsApp: <a class="l" href="https://wa.me/996223878888" target="_blank" rel="noopener">написать</a></p>
+        <p>Сайты: <a class="l" href="https://www.economstroy.kg" target="_blank" rel="noopener">economstroy.kg</a>, <a class="l" href="https://mebel.economstroy.kg" target="_blank" rel="noopener">mebel.economstroy.kg</a></p>
+        <p><a class="l" href="http://instagram.com/okna_economstroy" target="_blank" rel="noopener">Instagram</a> · <a class="l" href="http://ok.ru/profile/531993570528" target="_blank" rel="noopener">Одноклассники</a></p>
+        <div class="kicker" style="margin-top:16px">Сфера деятельности</div>
+        <ul>
+          <li>Производство пластиковых окон</li>
+          <li>Производство алюминиевых окон со стеклопакетом</li>
+          <li>Изготовление витражей / мозаики</li>
+          <li>Производство входных и межкомнатных дверей</li>
+          <li>Производство, ремонт и реставрация мебели</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Заказать звонок</h3>
+        <p style="color:var(--muted);font-size:14px">Заполните форму — откроется WhatsApp с готовым сообщением.</p>
+        <form id="form">
+          <label for="n">Ваше имя</label>
+          <input id="n" placeholder="Как к вам обращаться" autocomplete="name">
+          <label for="p">Телефон</label>
+          <input id="p" type="tel" placeholder="+996 ..." autocomplete="tel">
+          <label for="t">Что нужно сделать</label>
+          <select id="t">
+            <option>Перетяжка дивана</option>
+            <option>Перетяжка кресла или стула</option>
+            <option>Ремонт мягкой мебели</option>
+            <option>Реставрация мебели</option>
+            <option>Пошив чехлов или штор</option>
+            <option>Другое</option>
+          </select>
+          <button class="btn wa" type="submit">Отправить в WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Компания «Экономстрой»<small>Демонстрационный макет редизайна, не является официальным сайтом.</small></div>
+    <div>с. Лебединовка, пр. Ленина, д. 23/2 · +996 (223) 878-888</div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/996223878888" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.95 9.95 0 1 0 12.04 2Zm5.8 14.1c-.25.7-1.45 1.35-2 1.4-.5.05-1.15.25-3.7-.8-3.1-1.3-5.1-4.5-5.25-4.7-.15-.2-1.25-1.65-1.25-3.15s.8-2.25 1.05-2.55c.3-.3.6-.35.8-.35h.55c.18 0 .42-.07.65.5.25.6.85 2.1.92 2.25.08.15.12.33.02.52-.1.2-.15.32-.3.5-.15.17-.32.38-.45.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.1 1.32 2.4 1.47.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.08.12.08.72-.17 1.4Z"/></svg>
+</a>
+
+<div class="lb" id="lb"><img id="lbImg" alt=""></div>
+
+<script>
+var WA = "996223878888";
+var PRICES = {
+  "Стулья": [
+    ["Стул с мягкой спинкой","от 700"],
+    ["Стул с декоративной тесьмой и гвоздями","от 1 000"]
+  ],
+  "Кресла": [
+    ["Кресло с деревянными подлокотниками","от 2 500"],
+    ["Кресло с мягкими подлокотниками","от 3 000"],
+    ["Кресло сложной конструкции","от 3 500"],
+    ["Кресло с декоративными гвоздями и тесьмой","от 2 500"]
+  ],
+  "Диваны": [
+    ["Диван 2-местный сложной конструкции","от 6 000 – 7 000"],
+    ["Диван 3-местный сложной конструкции","от 8 000 – 9 000"],
+    ["Мягкие диваны других конструкций","от 3 000 – 4 000"],
+    ["Угловой кухонный","от 4 500"],
+    ["Угловой диван средний","от 10 000"],
+    ["Диван угловой сложной конструкции","от 20 000"]
+  ],
+  "Чехлы и гарнитуры": [
+    ["Чехол на диван","от 3 000 – 4 000"],
+    ["Перетяжка гарнитура (диван + 2 кресла, цена за комплект)","от 15 000 – 20 000"],
+    ["Перетяжка гарнитура сложной конструкции (диван + 2 кресла, за комплект)","от 25 000"]
+  ]
+};
+var tabsEl = document.getElementById('tabs'), pricesEl = document.getElementById('prices');
+function showTab(name){
+  Array.prototype.forEach.call(tabsEl.children, function(b){ b.classList.toggle('on', b.textContent===name); });
+  pricesEl.innerHTML = PRICES[name].map(function(r){
+    return '<div class="price"><span>'+r[0]+'</span><b>'+r[1]+' сом</b></div>';
+  }).join('');
+}
+Object.keys(PRICES).forEach(function(k, i){
+  var b = document.createElement('button');
+  b.className = 'tab'; b.type = 'button'; b.textContent = k;
+  b.onclick = function(){ showTab(k); };
+  tabsEl.appendChild(b);
+  if(i===0) showTab(k);
+});
+
+var BASE = "https://mebel.economstroy.kg/gallery/";
+var G = [];
+["15_b1","15_b3","15_b4","15_b5","15_b6","15_b7","15_b8"].forEach(function(n){ G.push([n,"Реставрация"]); });
+for(var i=1;i<=9;i++) G.push(["obivka_"+i,"Обивка"]);
+G.push(["zamena_obivki","Замена обивки"]);
+for(var j=1;j<=10;j++) G.push(["zamena_obivki_"+j,"Замена обивки"]);
+for(var k=1;k<=5;k++) G.push(["chehol_"+k,"Чехлы"]);
+G.push(["zamena_taburet","Табурет"]);
+
+var galEl = document.getElementById('gal'), moreBtn = document.getElementById('moreBtn'), shown = 0, STEP = 12;
+function more(){
+  G.slice(shown, shown+STEP).forEach(function(g){
+    var f = document.createElement('figure');
+    f.innerHTML = '<img loading="lazy" src="'+BASE+g[0]+'.jpg" alt="'+g[1]+'"><figcaption>'+g[1]+'</figcaption>';
+    var img = f.querySelector('img');
+    img.onerror = function(){ f.style.display='none'; };
+    f.onclick = function(){ document.getElementById('lbImg').src = img.src; document.getElementById('lb').classList.add('on'); };
+    galEl.appendChild(f);
+  });
+  shown += STEP;
+  if(shown >= G.length) moreBtn.style.display = 'none';
+}
+moreBtn.onclick = more; more();
+document.getElementById('lb').onclick = function(){ this.classList.remove('on'); };
+
+document.getElementById('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var n = document.getElementById('n').value.trim();
+  var p = document.getElementById('p').value.trim();
+  var t = document.getElementById('t').value;
+  var msg = "Здравствуйте! Меня зовут " + (n || "—") + ". Хочу заказать: " + t + "." + (p ? " Мой телефон: " + p + "." : "");
+  window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(msg), "_blank");
+});
+</script>
+</body>
+</html>
